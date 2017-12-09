@@ -1,0 +1,18 @@
+server:
+  port: 5761
+logging:
+  level: debug
+spring:
+  application:
+    name: gateway-service-zuul
+zuul:
+  routes:
+    api-a.path: /client/**
+    api-a.serviceId: ClientService
+
+eureka:
+  instance:
+    hostname: 10.10.181.166
+  client:
+    region: http://10.10.181.166:8761/eureka/
+
